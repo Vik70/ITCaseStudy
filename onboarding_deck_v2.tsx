@@ -7,8 +7,8 @@ const OnboardingDeck = () => {
 
   const slides = [
     {
-      title: "Onboarding today is fragile and stressful — it doesn’t need to be",
-      subtitle: "The Problem",
+      title: "Onboarding today is fragile and stressful",
+      subtitle: "It doesn’t need to be",
       content: (
         <div className="space-y-6">
           <div className="bg-blue-50 border-2 border-blue-500 p-4 rounded-lg shadow">
@@ -43,7 +43,7 @@ const OnboardingDeck = () => {
           </div>
 
           <div className="bg-blue-600 p-4 rounded-lg text-center font-bold text-white text-lg shadow-md">
-            Bottom line: We should not rely on heroics to get people working — we should rely on a system.
+            Bottom line: We should not rely on heroics to get people working. Instead, we should rely on a system.
           </div>
         </div>
       )
@@ -59,12 +59,12 @@ const OnboardingDeck = () => {
 
           <div className="space-y-3 text-sm text-slate-800">
             <div>
-              <div className="font-semibold text-slate-900">Wednesday (Recruiters)</div>
+              <div className="font-semibold text-slate-900">Wednesday before 23:59 local time (Recruiters)</div>
               <div>Recruiters submit new hires using a simple form. The form won’t submit unless all required fields are filled in, so IT isn’t chasing missing data later.</div>
             </div>
             <div>
               <div className="font-semibold text-slate-900">Thursday morning (IT)</div>
-              <div>IT reviews the list, checks for duplicates or mistakes, and uploads it into Okta. This is the moment where IT says: “Yes — these are the people starting on Monday.”</div>
+              <div>IT reviews the list, checks for duplicates or mistakes, and uploads it into Okta. This is the moment where IT says: “Yes, these are the people starting on Monday.”</div>
             </div>
             <div>
               <div className="font-semibold text-slate-900">Thursday afternoon (Systems)</div>
@@ -89,14 +89,14 @@ const OnboardingDeck = () => {
           </div>
 
           <div className="bg-amber-50 border border-amber-300 p-4 rounded-lg text-sm text-slate-800">
-            Late hires still happen — but they go through a fast-lane with manager approval so IT isn’t constantly firefighting.
+            Late hires still happen but they go through a fast lane with manager approval so IT isn’t constantly firefighting.
           </div>
         </div>
       )
     },
     {
       title: "How We Design the System",
-      subtitle: "These are not buzzwords — this is how IT avoids chaos.",
+      subtitle: "This is how IT avoids chaos.",
       content: (
         <div className="space-y-3 text-sm text-slate-800">
           <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
@@ -105,7 +105,7 @@ const OnboardingDeck = () => {
           </div>
           <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
             <div className="font-semibold text-slate-900">Automate the boring stuff</div>
-            <div>Creating accounts, assigning apps, pushing device profiles — that should happen without IT clicking buttons.</div>
+            <div>Creating accounts, assigning apps, pushing device profiles. That should really happen without IT clicking buttons.</div>
           </div>
           <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
             <div className="font-semibold text-slate-900">Use roles, not individuals</div>
@@ -113,11 +113,11 @@ const OnboardingDeck = () => {
           </div>
           <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
             <div className="font-semibold text-slate-900">Catch problems early</div>
-            <div>Friday is when we find issues — not Monday when someone is waiting to work.</div>
+            <div>Friday is when we find issues; definitely not Monday, when someone is waiting to work.</div>
           </div>
           <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
             <div className="font-semibold text-slate-900">Humans approve risky things</div>
-            <div>Finance systems, production access, admin tools — these need a human sign-off.</div>
+            <div>Finance systems, production access, admin tools would really need a human sign off.</div>
           </div>
         </div>
       )
@@ -148,17 +148,33 @@ const OnboardingDeck = () => {
       )
     },
     {
-      title: "How Recruiters Talk to IT",
-      subtitle: "From ad-hoc to one clean form",
+      title: "How Recruiters Hand Off New Hires to IT",
+      subtitle: "What I’ve personally seen fail, and what actually works",
       content: (
         <div className="space-y-4 text-sm text-slate-800">
           <div className="bg-red-50 border border-red-300 p-4 rounded-lg">
-            <div className="font-bold text-slate-900 mb-1">Right now</div>
-            <div>Emails, spreadsheets, Slack messages. That doesn’t scale.</div>
+            <div className="font-bold text-slate-900 mb-1">The problem I saw at Sophos</div>
+            <div>At Sophos, new hires came in through a mix of:</div>
+            <ul className="list-disc list-inside space-y-1 mt-1">
+              <li>Email threads</li>
+              <li>Spreadsheets</li>
+              <li>Jira tickets</li>
+              <li>Slack messages</li>
+            </ul>
+            <div className="mt-2">Each one contained slightly different information, in different formats.</div>
+            <div className="mt-2">That caused:</div>
+            <ul className="list-disc list-inside space-y-1 mt-1">
+              <li>Missing start dates</li>
+              <li>Wrong departments</li>
+              <li>Duplicate accounts</li>
+              <li>Last-minute Friday scrambles</li>
+            </ul>
+            <div className="mt-2">IT wasn’t slow — the inputs were unreliable.</div>
           </div>
 
           <div className="bg-blue-50 border border-blue-300 p-4 rounded-lg">
-            <div className="font-bold text-slate-900 mb-2">Instead, recruiters use one form.</div>
+            <div className="font-bold text-slate-900 mb-2">What works better</div>
+            <div className="font-semibold text-slate-900 mb-1">Recruiters should use one structured form.</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <div className="font-semibold text-slate-900 mb-1">They enter:</div>
@@ -174,20 +190,26 @@ const OnboardingDeck = () => {
                 </ul>
               </div>
               <div>
-                <div className="font-semibold text-slate-900 mb-1">The form:</div>
+                <div className="font-semibold text-slate-900 mb-1">The form itself enforces rules:</div>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Won’t submit if something is missing</li>
-                  <li>Won’t allow a start date that isn’t a Monday</li>
-                  <li>Catches duplicates</li>
-                  <li>Sends a confirmation back to the recruiter</li>
+                  <li>Won’t submit if anything is missing</li>
+                  <li>Won’t allow invalid start dates</li>
+                  <li>Detects duplicates</li>
+                  <li>Sends confirmation to the recruiter</li>
                 </ul>
               </div>
             </div>
           </div>
 
           <div className="bg-green-50 border border-green-300 p-4 rounded-lg">
-            <div>IT gets one clean list every week — not ten different emails.</div>
-            <div>That becomes the file we import into Okta.</div>
+            <div className="font-bold text-slate-900 mb-1">Why IT cares</div>
+            <div>Instead of ten emails, five spreadsheets, and three Slack pings, IT gets one clean list every week.</div>
+            <div className="mt-1">That list becomes:</div>
+            <ul className="list-disc list-inside space-y-1 mt-1">
+              <li>The file imported into Okta</li>
+              <li>The source of truth for accounts and devices</li>
+            </ul>
+            <div className="mt-2">No guessing. No rework. No “who owns this hire?”</div>
           </div>
         </div>
       )
