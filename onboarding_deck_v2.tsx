@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const OnboardingDeck = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const slides = [
     {
@@ -934,43 +935,110 @@ const OnboardingDeck = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 p-8">
+    <div className="min-h-screen bg-slate-50 p-4 md:p-6">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-white rounded-lg shadow-2xl p-8 min-h-[600px] flex flex-col border-2 border-slate-200">
-          <div className="mb-6 pb-4 border-b-2 border-slate-200">
-            <h1 className="text-4xl font-bold mb-2 text-slate-900">{slides[currentSlide].title}</h1>
-            {slides[currentSlide].subtitle && (
-              <h2 className="text-xl text-slate-600 font-medium">{slides[currentSlide].subtitle}</h2>
-            )}
-          </div>
-          
-          <div className="flex-1 overflow-auto">
-            {slides[currentSlide].content}
-          </div>
-          
-          <div className="flex justify-between items-center mt-6 pt-4 border-t-2 border-slate-200">
-            <button
-              onClick={prevSlide}
-              disabled={currentSlide === 0}
-              className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg disabled:bg-slate-300 disabled:cursor-not-allowed hover:bg-blue-700 transition shadow-md"
-            >
-              <ChevronLeft size={20} />
-              Previous
-            </button>
-            
-            <div className="text-slate-700 font-semibold text-lg">
-              Slide {currentSlide + 1} of {slides.length}
+        <div className="flex flex-col lg:flex-row gap-6">
+          {/* Navigation menu */}
+          <aside className="lg:w-64">
+            <div className="bg-white border border-slate-200 rounded-xl shadow-sm">
+              <div className="flex items-center justify-between p-4 border-b border-slate-200">
+                <div className="font-bold text-slate-900">Slides</div>
+                <div className="lg:hidden">
+                  <button
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    className="px-3 py-1 text-sm font-semibold bg-blue-600 text-white rounded-md shadow hover:bg-blue-700"
+                  >
+                    {menuOpen ? 'Close' : 'Menu'}
+                  </button>
+                </div>
+              </div>
+              <nav className="hidden lg:block max-h-[75vh] overflow-auto divide-y divide-slate-200">
+                {slides.map((slide, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentSlide(i)}
+                    className={`w-full text-left px-4 py-3 text-sm transition ${
+                      currentSlide === i
+                        ? 'bg-blue-50 text-blue-900 font-semibold'
+                        : 'hover:bg-slate-50 text-slate-800'
+                    }`}
+                  >
+                    <div className="flex items-start gap-2">
+                      <span className="text-xs text-slate-500">{i + 1}.</span>
+                      <span>{slide.title}</span>
+                    </div>
+                  </button>
+                ))}
+              </nav>
+              {menuOpen && (
+                <nav className="lg:hidden divide-y divide-slate-200">
+                  {slides.map((slide, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        setCurrentSlide(i);
+                        setMenuOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-3 text-sm transition ${
+                        currentSlide === i
+                          ? 'bg-blue-50 text-blue-900 font-semibold'
+                          : 'hover:bg-slate-50 text-slate-800'
+                      }`}
+                    >
+                      <div className="flex items-start gap-2">
+                        <span className="text-xs text-slate-500">{i + 1}.</span>
+                        <span>{slide.title}</span>
+                      </div>
+                    </button>
+                  ))}
+                </nav>
+              )}
             </div>
-            
-            <button
-              onClick={nextSlide}
-              disabled={currentSlide === slides.length - 1}
-              className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg disabled:bg-slate-300 disabled:cursor-not-allowed hover:bg-blue-700 transition shadow-md"
-            >
-              Next
-              <ChevronRight size={20} />
-            </button>
-          </div>
+          </aside>
+
+          {/* Slide content */}
+          <main className="flex-1">
+            <div className="bg-white rounded-lg shadow-2xl p-4 md:p-6 lg:p-8 min-h-[520px] flex flex-col border-2 border-slate-200">
+              <div className="mb-4 md:mb-6 pb-4 border-b-2 border-slate-200">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 text-slate-900">
+                  {slides[currentSlide].title}
+                </h1>
+                {slides[currentSlide].subtitle && (
+                  <h2 className="text-lg md:text-xl text-slate-600 font-medium">
+                    {slides[currentSlide].subtitle}
+                  </h2>
+                )}
+              </div>
+              
+              <div className="flex-1 overflow-auto space-y-4">
+                {slides[currentSlide].content}
+              </div>
+              
+              <div className="flex flex-col md:flex-row md:justify-between gap-3 items-stretch md:items-center mt-6 pt-4 border-t-2 border-slate-200">
+                <button
+                  onClick={prevSlide}
+                  disabled={currentSlide === 0}
+                  className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg disabled:bg-slate-300 disabled:cursor-not-allowed hover:bg-blue-700 transition shadow-md"
+                >
+                  <ChevronLeft size={20} />
+                  Previous
+                </button>
+                
+                <div className="text-center text-slate-700 font-semibold text-base md:text-lg">
+                  Slide {currentSlide + 1} of {slides.length}
+                </div>
+                
+                <button
+                  onClick={nextSlide}
+                  disabled={currentSlide === slides.length - 1}
+                  className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg disabled:bg-slate-300 disabled:cursor-not-allowed hover:bg-blue-700 transition shadow-md"
+                >
+                  Next
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            </div>
+          </main>
         </div>
       </div>
     </div>
