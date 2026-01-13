@@ -33,7 +33,7 @@ const OnboardingDeck = () => {
               <ul className="space-y-2 text-sm text-slate-800">
                 <li>• Scheduled weekly pipeline (Wed cutoff)</li>
                 <li>• RBAC groups control all access</li>
-                <li>• Zero-touch device enrollment</li>
+                <li>• Zero-touch device enrolment</li>
                 <li>• Automated validation & alerts</li>
                 <li>• Pre-verified before Monday start</li>
                 <li>• Global-ready from Day 0</li>
@@ -80,7 +80,7 @@ const OnboardingDeck = () => {
               <div className="bg-amber-600 text-white px-3 py-2 rounded-lg font-bold min-w-24 text-center shadow">FRI</div>
               <div className="flex-1">
                 <div className="font-bold text-slate-900 text-base">Verification & Credential Delivery</div>
-                <div className="text-sm text-slate-700">Test logins performed • Activation links sent • MFA enrollment checked • IT verifies success</div>
+                <div className="text-sm text-slate-700">Test logins performed • Activation links sent • MFA enrolment checked • IT verifies success</div>
               </div>
             </div>
             
@@ -88,7 +88,7 @@ const OnboardingDeck = () => {
               <div className="bg-red-700 text-white px-3 py-2 rounded-lg font-bold min-w-24 text-center shadow">MON</div>
               <div className="flex-1">
                 <div className="font-bold text-slate-900 text-base">Day 1 Monitoring</div>
-                <div className="text-sm text-slate-700">Monitor first logins • Track MDM enrollment • Alert on failures • Regional support ready</div>
+                <div className="text-sm text-slate-700">Monitor first logins • Track MDM enrolment • Alert on failures • Regional support ready</div>
               </div>
             </div>
           </div>
@@ -187,7 +187,7 @@ const OnboardingDeck = () => {
             </div>
             <div className="bg-amber-100 border-2 border-amber-500 p-3 rounded-lg text-center shadow">
               <div className="font-bold mb-1 text-slate-900">User Login</div>
-              <div className="text-xs text-slate-600">MFA + enrollment</div>
+              <div className="text-xs text-slate-600">MFA + enrolment</div>
             </div>
           </div>
           
@@ -197,7 +197,7 @@ const OnboardingDeck = () => {
               <li>• <span className="font-semibold text-slate-900">Okta Groups</span> - All app access via group membership only</li>
               <li>• <span className="font-semibold text-slate-900">Conditional Access</span> - Restrict access UNTIL the device meets security standards</li>
               <li>• <span className="font-semibold text-slate-900">Audit Logs</span> - All provisioning actions logged and reviewed weekly</li>
-              <li>• <span className="font-semibold text-slate-900">MFA Required</span> - No access without DUO enrollment</li>
+              <li>• <span className="font-semibold text-slate-900">MFA Required</span> - No access without DUO enrolment</li>
             </ul>
           </div>
         </div>
@@ -361,7 +361,7 @@ const OnboardingDeck = () => {
           
           <div className="bg-red-50 border-2 border-red-300 p-3 rounded">
             <div className="font-bold mb-2">Compliance Gating (Critical):</div>
-            <div className="text-sm">Block all app access if device NOT enrolled within 4 hours of first login attempt • Alert IT immediately • User redirected to enrollment instructions • No silent exceptions; time-bound exceptions need Security + Manager approval</div>
+            <div className="text-sm">Block all app access if device NOT enrolled within 4 hours of first login attempt • Alert IT immediately • User redirected to enrolment instructions • No silent exceptions; time-bound exceptions need Security + Manager approval</div>
           </div>
           
           <div className="bg-green-50 p-3 rounded">
@@ -400,11 +400,11 @@ const OnboardingDeck = () => {
               </div>
               <div className="flex items-center gap-2">
                 <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-bold">4</div>
-                <div>Forced DUO MFA enrollment (phone/SMS/authenticator)</div>
+                <div>Forced DUO MFA enrolment (phone/SMS/authenticator)</div>
               </div>
               <div className="flex items-center gap-2">
                 <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-bold">5</div>
-                <div>Access granted ONLY after MFA enrollment complete; step-up auth for privileged apps</div>
+                <div>Access granted ONLY after MFA enrolment complete; step-up auth for privileged apps</div>
               </div>
             </div>
           </div>
@@ -413,7 +413,7 @@ const OnboardingDeck = () => {
             <div className="font-bold mb-2">IT Verification (Friday Afternoon):</div>
             <ul className="text-sm space-y-1">
               <li>• Test login performed for every user in batch</li>
-              <li>• Check MFA enrollment status in DUO admin</li>
+              <li>• Check MFA enrolment status in DUO admin</li>
               <li>• Verify group memberships applied correctly</li>
               <li>• Review audit logs for any errors</li>
               <li>• Flag failures for immediate fix before Monday</li>
@@ -425,7 +425,7 @@ const OnboardingDeck = () => {
             <ul className="text-sm space-y-1">
               <li>• Track first login attempts (dashboard)</li>
               <li>• Alert if user hasn't logged in by 12pm local</li>
-              <li>• Monitor MDM enrollment status</li>
+              <li>• Monitor MDM enrolment status</li>
               <li>• Failed logins automatically raise an IT ticket so issues are fixed quickly</li>
               <li>• Regional support notified of new hires</li>
             </ul>
@@ -440,7 +440,7 @@ const OnboardingDeck = () => {
               </div>
               <div>
                 <div className="font-semibold">Phone lost/unavailable:</div>
-                <div>DUO bypass code (manager approval) → re-enroll next day</div>
+                <div>DUO bypass code (manager approval) → re-enrol next day</div>
               </div>
             </div>
           </div>
@@ -494,7 +494,7 @@ const OnboardingDeck = () => {
             <div className="bg-gray-50 p-2 border"></div>
             <div className="bg-yellow-50 p-2 border">Push device profiles • Pre-assign devices</div>
             <div className="bg-gray-50 p-2 border"></div>
-            <div className="bg-yellow-50 p-2 border">Verify enrollment • Check compliance</div>
+            <div className="bg-yellow-50 p-2 border">Verify enrolment • Check compliance</div>
           </div>
           
           <div className="grid grid-cols-6 gap-1 text-xs">
@@ -503,7 +503,7 @@ const OnboardingDeck = () => {
             <div className="bg-gray-50 p-2 border"></div>
             <div className="bg-gray-50 p-2 border"></div>
             <div className="bg-orange-50 p-2 border">Receive activation • Set password • Enroll MFA</div>
-            <div className="bg-orange-50 p-2 border">First login • Device enrollment</div>
+            <div className="bg-orange-50 p-2 border">First login • Device enrolment</div>
           </div>
           
           <div className="mt-4 bg-gray-100 p-3 rounded">
@@ -603,7 +603,7 @@ const OnboardingDeck = () => {
                 <td className="border p-2 font-semibold">Device Setup</td>
                 <td className="border p-2">MDM profile push</td>
                 <td className="border p-2">IT assigns device</td>
-                <td className="border p-2">Jamf/Intune enrollment status</td>
+                <td className="border p-2">Jamf/Intune enrolment status</td>
                 <td className="border p-2">IT Admin</td>
               </tr>
               <tr>
@@ -617,7 +617,7 @@ const OnboardingDeck = () => {
                 <td className="border p-2 font-semibold">MFA Enrollment</td>
                 <td className="border p-2">Forced on first login</td>
                 <td className="border p-2">IT checks completion</td>
-                <td className="border p-2">DUO enrollment events</td>
+                <td className="border p-2">DUO enrolment events</td>
                 <td className="border p-2">IT Security</td>
               </tr>
               <tr>
@@ -680,8 +680,8 @@ const OnboardingDeck = () => {
               <div>Auto-flag; recruiter correction loop; resend after fix</div>
             </div>
             <div className="bg-green-50 border-2 border-green-400 p-3 rounded">
-              <div className="font-semibold mb-1">MDM enrollment fails</div>
-              <div>Guided remediation; fallback manual enrollment; block access until compliant</div>
+              <div className="font-semibold mb-1">MDM enrolment fails</div>
+              <div>Guided remediation; fallback manual enrolment; block access until compliant</div>
             </div>
             <div className="bg-orange-50 border-2 border-orange-400 p-3 rounded">
               <div className="font-semibold mb-1">Shipping delayed</div>
@@ -705,7 +705,7 @@ const OnboardingDeck = () => {
             <ul className="text-sm space-y-1">
               <li>• <span className="font-semibold">Suspicious login:</span> Auto-lock account → Security team notified → Investigation</li>
               <li>• <span className="font-semibold">Account lockout:</span> IT verifies identity → Reset via DUO admin</li>
-              <li>• <span className="font-semibold">Lost MFA device:</span> Manager approval → Temporary bypass code → Re-enroll next day</li>
+              <li>• <span className="font-semibold">Lost MFA device:</span> Manager approval → Temporary bypass code → Re-enrol next day</li>
             </ul>
           </div>
           
@@ -756,11 +756,11 @@ const OnboardingDeck = () => {
                   <span className="font-bold">Target: 98%</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>• MDM enrollment by 12pm Monday</span>
+                  <span>• MDM enrolment by 12pm Monday</span>
                   <span className="font-bold">Target: 95%</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>• MFA enrollment rate (Friday)</span>
+                  <span>• MFA enrolment rate (Friday)</span>
                   <span className="font-bold">Target: 100%</span>
                 </li>
                 <li className="flex justify-between">
@@ -793,7 +793,7 @@ const OnboardingDeck = () => {
               <div>
                 <div className="font-semibold">Friday:</div>
                 <div>• Test logins performed</div>
-                <div>• MFA enrollment verified</div>
+                <div>• MFA enrolment verified</div>
               </div>
               <div>
                 <div className="font-semibold">Monday:</div>
@@ -893,7 +893,7 @@ const OnboardingDeck = () => {
             <ul className="text-sm space-y-1">
               <li>• Test with 5-10 hires (single region)</li>
               <li>• Validate activation link delivery</li>
-              <li>• Test MDM enrollment flow</li>
+              <li>• Test MDM enrolment flow</li>
               <li>• Refine based on feedback</li>
             </ul>
           </div>
