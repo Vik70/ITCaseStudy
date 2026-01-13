@@ -7,251 +7,187 @@ const OnboardingDeck = () => {
 
   const slides = [
     {
-      title: "Problem: Ad-Hoc Onboarding Creates Risk",
-      subtitle: "What we're proposing in one sentence",
+      title: "Onboarding today is fragile and stressful — it doesn’t need to be",
+      subtitle: "The Problem",
       content: (
         <div className="space-y-6">
           <div className="bg-blue-50 border-2 border-blue-500 p-4 rounded-lg shadow">
-            <div className="font-bold text-blue-900">Proposal in 1 sentence</div>
+            <div className="font-bold text-blue-900">One-sentence proposal</div>
             <div className="text-sm text-slate-800">
-            A simple, identity-driven onboarding pipeline that lets CloudKitchens onboard global hires reliably in days... not hours of last-minute IT work!            </div>
+              “We turn onboarding from a last-minute scramble into a predictable weekly process where every new hire is ready to work on Monday.”
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="border-2 border-red-400 bg-red-50 p-5 rounded-lg">
-              <h3 className="font-bold text-red-900 mb-3 text-lg">Current State: Reactive & Risky</h3>
+              <h3 className="font-bold text-red-900 mb-3 text-lg">Current reality</h3>
               <ul className="space-y-2 text-sm text-slate-800">
-                <li>• Ad-hoc emails from recruiters</li>
-                <li>• Manual provisioning by IT</li>
-                <li>• Last-minute panic on Friday/Monday</li>
-                <li>• No verification before Day 1</li>
-                <li>• Regional delays cause access gaps</li>
-                <li>• Security risks from rushed setups</li>
+                <li>• Recruiters send emails at different times</li>
+                <li>• IT manually creates accounts and chases missing info</li>
+                <li>• Things get missed, especially on Fridays</li>
+                <li>• New hires start without access</li>
+                <li>• Time zones make everything harder</li>
+                <li>• Security gets weaker when things are rushed</li>
               </ul>
             </div>
             <div className="border-2 border-green-500 bg-green-50 p-5 rounded-lg">
-              <h3 className="font-bold text-green-900 mb-3 text-lg">Future State: Controlled Pipeline</h3>
+              <h3 className="font-bold text-green-900 mb-3 text-lg">What we want instead</h3>
               <ul className="space-y-2 text-sm text-slate-800">
-                <li>• Scheduled weekly pipeline (Wed cutoff)</li>
-                <li>• RBAC groups control all access</li>
-                <li>• Zero-touch device enrolment</li>
-                <li>• Automated validation & alerts</li>
-                <li>• Pre-verified before Monday start</li>
-                <li>• Global-ready from Day 0</li>
+                <li>• One clear weekly deadline</li>
+                <li>• One source of truth for new hires</li>
+                <li>• Devices and accounts ready before Day 1</li>
+                <li>• Access based on role, not manual guesswork</li>
+                <li>• Problems caught on Friday, not Monday</li>
               </ul>
             </div>
           </div>
+
           <div className="bg-blue-600 p-4 rounded-lg text-center font-bold text-white text-lg shadow-md">
-            Top takeaway: We replace last minute firefighting with a predictable, auditable pipeline.
+            Bottom line: We should not rely on heroics to get people working — we should rely on a system.
           </div>
         </div>
       )
     },
     {
       title: "Weekly Operating Model",
-      subtitle: "Wednesday Cutoff → Monday Ready",
+      subtitle: "How this works in practice",
       content: (
-        <div className="space-y-4">
-          <div className="space-y-3">
-            <div className="flex items-start gap-3">
-              <div className="bg-purple-700 text-white px-3 py-2 rounded-lg font-bold min-w-24 text-center shadow">WED 23:59</div>
-              <div className="flex-1">
-                <div className="font-bold text-slate-900 text-base">Recruiter Cutoff (Local Time)</div>
-                <div className="text-sm text-slate-700">All hire requests submitted via form • Validation runs automatically • Rejects incomplete entries</div>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <div className="bg-blue-700 text-white px-3 py-2 rounded-lg font-bold min-w-24 text-center shadow">THU AM</div>
-              <div className="flex-1">
-                <div className="font-bold text-slate-900 text-base">IT Validation & Import</div>
-                <div className="text-sm text-slate-700">Review approved batch • Duplicate detection • Import to Okta • Trigger group assignments</div>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <div className="bg-green-700 text-white px-3 py-2 rounded-lg font-bold min-w-24 text-center shadow">THU PM</div>
-              <div className="flex-1">
-                <div className="font-bold text-slate-900 text-base">Automated Provisioning</div>
-                <div className="text-sm text-slate-700">Okta creates accounts • Groups assign apps • Device profiles pushed • Regional alerts sent</div>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <div className="bg-amber-600 text-white px-3 py-2 rounded-lg font-bold min-w-24 text-center shadow">FRI</div>
-              <div className="flex-1">
-                <div className="font-bold text-slate-900 text-base">Verification & Credential Delivery</div>
-                <div className="text-sm text-slate-700">Test logins performed • Activation links sent • MFA enrolment checked • IT verifies success</div>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <div className="bg-red-700 text-white px-3 py-2 rounded-lg font-bold min-w-24 text-center shadow">MON</div>
-              <div className="flex-1">
-                <div className="font-bold text-slate-900 text-base">Day 1 Monitoring</div>
-                <div className="text-sm text-slate-700">Monitor first logins • Track MDM enrolment • Alert on failures • Regional support ready</div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t-2 border-slate-300 pt-4 mt-4 bg-slate-50 p-4 rounded-lg">
-            <div className="font-bold mb-2 text-slate-900">Fast Lane (Late Hires):</div>
-            <div className="text-sm text-slate-700">4-hour SLA if request before local EOD • Requires hiring manager approval • VDI/loaner if device unavailable</div>
+        <div className="space-y-5">
+          <div className="bg-slate-100 border border-slate-200 p-4 rounded-lg">
+            <div className="font-bold text-slate-900">“Everyone knows what happens each week and when.”</div>
           </div>
 
-          <div className="bg-slate-100 border-2 border-slate-300 p-4 rounded-lg">
-            <div className="font-bold mb-2 text-slate-900">Source of Truth:</div>
-            <ul className="text-sm space-y-1 text-slate-700">
-              <li>• Recruiter form is the source of truth for each week’s hires. Okta is the execution system.</li>
-              <li>• Late changes are allowed, but require manager approval and are logged so IT can track impact.</li>
-              <li>• Import files are versioned and reviewed before Okta load</li>
+          <div className="space-y-3 text-sm text-slate-800">
+            <div>
+              <div className="font-semibold text-slate-900">Wednesday (Recruiters)</div>
+              <div>Recruiters submit new hires using a simple form. The form won’t submit unless all required fields are filled in, so IT isn’t chasing missing data later.</div>
+            </div>
+            <div>
+              <div className="font-semibold text-slate-900">Thursday morning (IT)</div>
+              <div>IT reviews the list, checks for duplicates or mistakes, and uploads it into Okta. This is the moment where IT says: “Yes — these are the people starting on Monday.”</div>
+            </div>
+            <div>
+              <div className="font-semibold text-slate-900">Thursday afternoon (Systems)</div>
+              <div>Okta creates the accounts. Jamf and Intune prepare the devices. Apps are assigned automatically based on role.</div>
+            </div>
+            <div>
+              <div className="font-semibold text-slate-900">Friday (Verification)</div>
+              <div className="space-y-1">
+                <div>IT checks:</div>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Can users log in?</li>
+                  <li>Did MFA enrol?</li>
+                  <li>Did devices enrol correctly?</li>
+                </ul>
+                <div>If anything is broken, it gets fixed before Monday.</div>
+              </div>
+            </div>
+            <div>
+              <div className="font-semibold text-slate-900">Monday (Day 1)</div>
+              <div>IT monitors logins and device enrolment and helps anyone who didn’t get in.</div>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 border border-amber-300 p-4 rounded-lg text-sm text-slate-800">
+            Late hires still happen — but they go through a fast-lane with manager approval so IT isn’t constantly firefighting.
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "How We Design the System",
+      subtitle: "These are not buzzwords — this is how IT avoids chaos.",
+      content: (
+        <div className="space-y-3 text-sm text-slate-800">
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
+            <div className="font-semibold text-slate-900">Identity is the control point</div>
+            <div>If Okta is right, everything else follows. If Okta is wrong, everything breaks.</div>
+          </div>
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
+            <div className="font-semibold text-slate-900">Automate the boring stuff</div>
+            <div>Creating accounts, assigning apps, pushing device profiles — that should happen without IT clicking buttons.</div>
+          </div>
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
+            <div className="font-semibold text-slate-900">Use roles, not individuals</div>
+            <div>People get access because they are “Finance” or “Kitchen Ops,” not because someone remembered what to tick.</div>
+          </div>
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
+            <div className="font-semibold text-slate-900">Catch problems early</div>
+            <div>Friday is when we find issues — not Monday when someone is waiting to work.</div>
+          </div>
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-3 rounded">
+            <div className="font-semibold text-slate-900">Humans approve risky things</div>
+            <div>Finance systems, production access, admin tools — these need a human sign-off.</div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Where Everything Connects",
+      subtitle: "This is how the moving parts fit together.",
+      content: (
+        <div className="space-y-4 text-sm text-slate-800">
+          <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm space-y-2">
+            <div>Recruiter / HR gives us the hiring data.</div>
+            <div>Okta is where identity lives.</div>
+            <div>Jamf and Intune make sure devices are secure.</div>
+            <div>Google, Slack, POS, Finance tools get access from Okta.</div>
+          </div>
+
+          <div className="bg-slate-100 border border-slate-200 p-4 rounded-lg space-y-2">
+            <div className="font-bold text-slate-900">What matters:</div>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Apps are never assigned directly to users</li>
+              <li>Devices must be compliant before they get access</li>
+              <li>MFA is required for everyone</li>
+              <li>If someone leaves, disabling them in Okta shuts off everything.</li>
             </ul>
+            <div className="text-slate-800">That’s how we stay secure without chasing systems one by one.</div>
           </div>
         </div>
       )
     },
     {
-      title: "Design Principles",
-      subtitle: "System Controls, Not Heroics",
+      title: "How Recruiters Talk to IT",
+      subtitle: "From ad-hoc to one clean form",
       content: (
-        <div className="space-y-4">
-          {[
-            {
-              principle: "Identity as Control Plane",
-              why: "Centralises access removal - disable Okta = disable everything instantly"
-            },
-            {
-              principle: "Zero-Touch Provisioning",
-              why: "Reduces hands-on IT time from 45min to 5min per hire"
-            },
-            {
-              principle: "Role-Based Access Only",
-              why: "Prevents per-user drift - all access via groups, auditable and consistent"
-            },
-            {
-              principle: "Global-First Design",
-              why: "Accounts ready before any region starts work - no timezone delays"
-            },
-            {
-              principle: "Verification Before Day 1",
-              why: "Catch failures Friday, not Monday morning when user is waiting"
-            },
-            {
-              principle: "Automate routine work, require humans for risk",
-              why: "Every control is owned by someone, so nothing falls through the cracks."
-            }
-          ].map((item, i) => (
-            <div key={i} className="border-l-4 border-blue-600 pl-4 bg-blue-50 p-3 rounded-r-lg">
-              <div className="font-bold text-lg text-slate-900">{item.principle}</div>
-              <div className="text-sm text-slate-700 italic mt-1">→ {item.why}</div>
-            </div>
-          ))}
-        </div>
-      )
-    },
-    {
-      title: "System Architecture",
-      subtitle: "Where Controls Live",
-      content: (
-        <div className="space-y-6">
-          <div className="grid grid-cols-5 gap-2 text-center text-sm">
-            <div className="bg-orange-100 border-2 border-orange-500 p-3 rounded-lg shadow">
-              <div className="font-bold mb-1 text-slate-900">Recruiter / HR System</div>
-              <div className="text-xs text-slate-600">Hiring data source</div>
-            </div>
-            <div className="flex items-center justify-center text-slate-700 font-bold text-xl">→</div>
-            <div className="bg-blue-100 border-2 border-blue-500 p-3 rounded-lg shadow">
-              <div className="font-bold mb-1 text-slate-900">Okta</div>
-              <div className="text-xs text-slate-600">Identity + RBAC</div>
-            </div>
-            <div className="flex items-center justify-center text-slate-700 font-bold text-xl">→</div>
-            <div className="bg-purple-100 border-2 border-purple-500 p-3 rounded-lg shadow">
-              <div className="font-bold mb-1 text-slate-900">Apps</div>
-              <div className="text-xs text-slate-600">Google/Slack/etc</div>
-            </div>
+        <div className="space-y-4 text-sm text-slate-800">
+          <div className="bg-red-50 border border-red-300 p-4 rounded-lg">
+            <div className="font-bold text-slate-900 mb-1">Right now</div>
+            <div>Emails, spreadsheets, Slack messages. That doesn’t scale.</div>
           </div>
-          
-          <div className="grid grid-cols-3 gap-2 text-center text-sm">
-            <div></div>
-            <div className="flex items-center justify-center text-slate-700 font-bold text-3xl">↓</div>
-            <div></div>
-          </div>
-          
-          <div className="grid grid-cols-3 gap-4">
-            <div className="bg-green-100 border-2 border-green-500 p-3 rounded-lg text-center shadow">
-              <div className="font-bold mb-1 text-slate-900">Jamf (Mac)</div>
-              <div className="text-xs text-slate-600">Device compliance + apps</div>
-            </div>
-            <div className="bg-green-100 border-2 border-green-500 p-3 rounded-lg text-center shadow">
-              <div className="font-bold mb-1 text-slate-900">Intune (Win)</div>
-              <div className="text-xs text-slate-600">Device compliance + apps</div>
-            </div>
-            <div className="bg-amber-100 border-2 border-amber-500 p-3 rounded-lg text-center shadow">
-              <div className="font-bold mb-1 text-slate-900">User Login</div>
-              <div className="text-xs text-slate-600">MFA + enrolment</div>
-            </div>
-          </div>
-          
-          <div className="bg-slate-100 border-2 border-slate-300 p-4 rounded-lg mt-4">
-            <div className="font-bold mb-3 text-slate-900 text-base">Control Points:</div>
-            <ul className="text-sm space-y-2 text-slate-700">
-              <li>• <span className="font-semibold text-slate-900">Okta Groups</span> - All app access via group membership only</li>
-              <li>• <span className="font-semibold text-slate-900">Conditional Access</span> - Restrict access UNTIL the device meets security standards</li>
-              <li>• <span className="font-semibold text-slate-900">Audit Logs</span> - All provisioning actions logged and reviewed weekly</li>
-              <li>• <span className="font-semibold text-slate-900">MFA Required</span> - No access without DUO enrolment</li>
-            </ul>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: "Recruiter → IT Handoff",
-      subtitle: "Validated Pipeline, Not Ad-Hoc Emails",
-      content: (
-        <div className="space-y-4">
-          <div className="bg-blue-50 border-2 border-blue-400 p-5 rounded-lg shadow">
-            <div className="font-bold mb-3 text-slate-900 text-base">Structured onboarding form (instead of ad-hoc email)</div>
-            <div className="grid grid-cols-2 gap-4 text-sm">
+
+          <div className="bg-blue-50 border border-blue-300 p-4 rounded-lg">
+            <div className="font-bold text-slate-900 mb-2">Instead, recruiters use one form.</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <div className="font-semibold text-slate-900 mb-2">Required Fields:</div>
-                <ul className="mt-1 space-y-1 text-slate-700">
-                  <li>• Full name</li>
-                  <li>• Personal email (for activation)</li>
-                  <li>• Start date</li>
-                  <li>• Department (dropdown)</li>
-                  <li>• Role/Title (dropdown)</li>
-                  <li>• Region (dropdown)</li>
-                  <li>• Device type (Mac/Windows)</li>
-                  <li>• Manager name</li>
+                <div className="font-semibold text-slate-900 mb-1">They enter:</div>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Name</li>
+                  <li>Personal email (for activation)</li>
+                  <li>Start date</li>
+                  <li>Team</li>
+                  <li>Role</li>
+                  <li>Location</li>
+                  <li>Device type</li>
+                  <li>Manager</li>
                 </ul>
               </div>
               <div>
-                <div className="font-semibold text-slate-900 mb-2">Validation Rules:</div>
-                <ul className="mt-1 space-y-1 text-slate-700">
-                  <li>• All fields mandatory</li>
-                  <li>• Start date must be future Monday</li>
-                  <li>• Duplicate detection (name + email + date)</li>
-                  <li>• Cutoff: Wednesday 23:59 local</li>
-                  <li>• Auto-reject incomplete</li>
-                  <li>• Drop-downs and validation prevent common mistakes</li>
-                  <li>• Confirmation email to recruiter</li>
+                <div className="font-semibold text-slate-900 mb-1">The form:</div>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Won’t submit if something is missing</li>
+                  <li>Won’t allow a start date that isn’t a Monday</li>
+                  <li>Catches duplicates</li>
+                  <li>Sends a confirmation back to the recruiter</li>
                 </ul>
               </div>
             </div>
           </div>
-          
-          <div className="flex items-center justify-between text-sm bg-slate-100 p-4 rounded-lg border-2 border-slate-300 shadow">
-            <div className="font-bold text-slate-900">Form Submit</div>
-            <span className="text-slate-600 font-bold">→</span>
-            <div className="font-bold text-slate-900">Validation</div>
-            <span className="text-slate-600 font-bold">→</span>
-            <div className="font-bold text-slate-900">Approved Batch</div>
-            <span className="text-slate-600 font-bold">→</span>
-            <div className="font-bold text-slate-900">Okta Import</div>
-          </div>
-          
-          <div className="bg-amber-50 border-2 border-amber-500 p-4 rounded-lg shadow">
-            <div className="font-bold mb-2 text-slate-900">Control & Evidence:</div>
-            <div className="text-sm text-slate-700">Weekly batch report (CSV) • Rejected requests log • IT reviews Thursday AM • Manager notified of approved hires</div>
+
+          <div className="bg-green-50 border border-green-300 p-4 rounded-lg">
+            <div>IT gets one clean list every week — not ten different emails.</div>
+            <div>That becomes the file we import into Okta.</div>
           </div>
         </div>
       )
