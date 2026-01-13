@@ -117,7 +117,7 @@ const OnboardingDeck = () => {
           {[
             {
               principle: "Identity as Control Plane",
-              why: "Centralizes access removal - disable Okta = disable everything instantly"
+              why: "Centralises access removal - disable Okta = disable everything instantly"
             },
             {
               principle: "Zero-Touch Provisioning",
